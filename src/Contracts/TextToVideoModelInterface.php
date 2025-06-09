@@ -4,7 +4,8 @@ namespace Passionatelaraveldev\FalAI\Contracts;
 
 use Illuminate\Http\JsonResponse;
 
-interface TextToVideoModelInterface {
+interface TextToVideoModelInterface
+{
     // submit task to generate the video
     public function submit(array $params): JsonResponse;
 

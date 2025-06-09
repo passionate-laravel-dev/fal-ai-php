@@ -21,8 +21,9 @@ class FalAI
     }
 
     /** text to video model */
-    public function textToVideoModel(ModelEnum $model): TextToVideoModelInterface {
-        return match($model) {
+    public function textToVideoModel(ModelEnum $model): TextToVideoModelInterface
+    {
+        return match ($model) {
             ModelEnum::KLING => new Kling($this->client),
             ModelEnum::VEED => new Veed($this->client),
             ModelEnum::VEO3 => new Veo3($this->client)

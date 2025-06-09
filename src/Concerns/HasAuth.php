@@ -15,7 +15,7 @@ trait HasAuth
     public function authHeader(): array
     {
         return [
-            'Authorization' => "Key " . $this->FAL_KEY,
+            'Authorization' => 'Key '.$this->FAL_KEY,
         ];
     }
 
@@ -24,7 +24,7 @@ trait HasAuth
      */
     public function ensureAuth(): bool
     {
-        return !empty($this->FAL_KEY);
+        return ! empty($this->FAL_KEY);
     }
 
     /**

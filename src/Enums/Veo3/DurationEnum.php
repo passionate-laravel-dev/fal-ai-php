@@ -4,8 +4,9 @@ namespace Passionatelaraveldev\FalAI\Enums\Veo3;
 
 use Passionatelaraveldev\FalAI\Concerns\HasEnumConvert;
 
-enum DurationEnum: string {
+enum DurationEnum: string
+{
     use HasEnumConvert;
 
-    case DURATION_8S = "8s";
+    case DURATION_8S = '8s';
 }

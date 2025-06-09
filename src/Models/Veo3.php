@@ -8,7 +8,7 @@ use Passionatelaraveldev\FalAI\Contracts\TextToVideoModelInterface;
 
 /**
  * Veo3 model to generate video from text prompt
- * 
+ *
  * @see https://fal.ai/models/fal-ai/veo3/api
  */
 class Veo3 implements TextToVideoModelInterface
@@ -17,12 +17,13 @@ class Veo3 implements TextToVideoModelInterface
 
     /**
      * submit task to generate the video
-     * 
+     *
      * @see Passionatelaraveldev\FalAI\Enums\AspectRatioEnum, Passionatelaraveldev\FalAI\Enums\Veo3\DurationEnum
      */
     public function submit(array $params): JsonResponse
     {
         $res = $this->client->request('post', 'fal-ai/veo3', $params);
+
         return $this->client->jsonStatusResponse($res);
     }
 
@@ -30,6 +31,7 @@ class Veo3 implements TextToVideoModelInterface
     public function checkStatus(string $requestId): JsonResponse
     {
         $res = $this->client->request('get', "fal-ai/veo3/requests/$requestId/status");
+
         return $this->client->jsonStatusResponse($res);
     }
 
@@ -37,6 +39,7 @@ class Veo3 implements TextToVideoModelInterface
     public function getResult(string $requestId): JsonResponse
     {
         $res = $this->client->request('get', "fal-ai/veo3/requests/$requestId");
+
         return $this->client->jsonStatusResponse($res);
     }
 }

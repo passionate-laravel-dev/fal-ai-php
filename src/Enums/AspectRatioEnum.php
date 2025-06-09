@@ -4,7 +4,8 @@ namespace Passionatelaraveldev\FalAI\Enums;
 
 use Passionatelaraveldev\FalAI\Concerns\HasEnumConvert;
 
-enum AspectRatioEnum: string {
+enum AspectRatioEnum: string
+{
     use HasEnumConvert;
 
     case RATIO_16_9 = '16:9';

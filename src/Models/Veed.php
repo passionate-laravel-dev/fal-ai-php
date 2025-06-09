@@ -8,7 +8,7 @@ use Passionatelaraveldev\FalAI\Contracts\TextToVideoModelInterface;
 
 /**
  * Veed model to generate video from text prompt
- * 
+ *
  * @see https://fal.ai/models/veed/avatars/text-to-video/api
  */
 class Veed implements TextToVideoModelInterface
@@ -17,12 +17,13 @@ class Veed implements TextToVideoModelInterface
 
     /**
      * submit task to generate the video
-     * 
+     *
      * @see Passionatelaraveldev\FalAI\Enums\Veed\AvatarEnum
      */
     public function submit(array $params): JsonResponse
     {
         $res = $this->client->request('post', 'veed/avatars/text-to-video', $params);
+
         return $this->client->jsonStatusResponse($res);
     }
 
@@ -30,6 +31,7 @@ class Veed implements TextToVideoModelInterface
     public function checkStatus(string $requestId): JsonResponse
     {
         $res = $this->client->request('get', "veed/avatars/requests/$requestId/status");
+
         return $this->client->jsonStatusResponse($res);
     }
 
@@ -37,6 +39,7 @@ class Veed implements TextToVideoModelInterface
     public function getResult(string $requestId): JsonResponse
     {
         $res = $this->client->request('get', "veed/avatars/requests/$requestId");
+
         return $this->client->jsonStatusResponse($res);
     }
 }
