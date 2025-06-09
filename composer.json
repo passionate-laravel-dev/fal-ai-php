@@ -1,0 +1,41 @@
+{
+    "name": "passionate-laravel-dev/fal-ai-php",
+    "description": "PHP package for fal ai",
+    "keywords": [
+        "ai",
+        "php",
+        "fal-ai",
+        "ai-video",
+        "fal-ai-php",
+        "passionate-laravel-dev"
+    ],
+    "homepage": "https://github.com/passionate-laravel-dev/fal-ai-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Taha",
+            "email": "taha.engineer26@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2.4",
+        "illuminate/http": "^10.0 || ^11.0 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Passionatelaraveldev\\FalAI\\": "src/"
+        }
+    },
+    "scripts": {
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "laravel/pint": "^1.22"
+    }
+}
