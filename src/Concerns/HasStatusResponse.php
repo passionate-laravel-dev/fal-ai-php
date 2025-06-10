@@ -14,7 +14,7 @@ trait HasStatusResponse
      */
     public function jsonStatusResponse(Response $res): JsonResponse
     {
-        if ($res->successful() && ($res->json('code') > 199 && $res->json('code') < 300)) {
+        if ($res->successful()) {
             return FacadesResponse::json([
                 'status' => 'success',
                 'resData' => $res->json(),
@@ -24,7 +24,7 @@ trait HasStatusResponse
         if ($res->unauthorized()) {
             return FacadesResponse::json([
                 'status' => 'error',
-                'message' => $res->json('message') ?? 'Unauthorized',
+                'message' => $res->json('detail') ?? 'Unauthorized',
             ], 401);
         }
 
@@ -35,7 +35,7 @@ trait HasStatusResponse
 
         return FacadesResponse::json([
             'status' => 'error',
-            'message' => $res->json('message') ?? 'Unexpected error happen',
+            'message' => $res->json('detail') ?? 'Unexpected error happen',
         ], $res->status());
     }
 }

@@ -41,10 +41,15 @@ trait HasEnumConvert
      */
     public static function getLabels(): array
     {
-        $labels = Arr::map(self::cases(), static fn ($enum) => $enum->label());
-
-        return $labels;
+        return Arr::map(self::cases(), static fn ($enum) => $enum->label());
     }
+
+	/**
+	 * get values
+	 */
+	public static function getValues(): array {
+		return Arr::map(self::cases(), static fn($enum) => $enum->value);
+	}
 
     /**
      * get label from enum
